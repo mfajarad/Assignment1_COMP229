@@ -1,0 +1,59 @@
+<!-- 
+  Assignment 1 & 2
+  Author: Michelle Fajardo
+  SN: 301097601
+  SEC: 05
+  DATE: OCT. 26, 2020
+-->
+
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+    <!--Message-->
+    <% if(messages.length > 0) { %>
+        <div class="alert alert-danger">
+            <%= messages  %> 
+        </div>
+    <% } %>
+    
+    <div class="row">
+        <div class="offset md-4 col-md-4">
+            <h1>Please Register</h1>
+            <form method="POST" autocomplete="off">
+                <fieldsset class="form-group">
+                    <label for="username">Username: </label>
+                    <input type="text" class="form-control" name="username" placeholder="Username" id="username" required autofocus>
+                </fieldsset>
+    
+                <fieldsset class="form-group">
+                    <label for="password">Password: </label>
+                    <input type="text" class="form-control" name="password" placeholder="******" id="password">
+                </fieldsset>
+                
+                <fieldsset class="form-group">
+                    <label for="email">E-mail: </label>
+                    <input type="text" class="form-control" name="email" placeholder="Email@email.com" id="email">
+                </fieldsset>
+
+                <fieldsset class="form-group">
+                    <label for="displayName">Name: </label>
+                    <input type="text" class="form-control" name="displayName" placeholder="Name" id="displayName">
+                </fieldsset>
+    
+                <fieldsset class="form-group text-right">
+                    <input type="submit" class="btn btn-success" value="Login">
+                    <a href="/">
+                        <input type="button" class="btn btn-warning" value="Cancel">
+                    </a>
+                </fieldsset>
+            </form>
+        </div>
+    </div>
+    
+    </main>
+
+<% include ../partials/bottom_nav.ejs %>
+
+<% include ../partials/footer.ejs %>

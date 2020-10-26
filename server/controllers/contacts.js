@@ -1,3 +1,11 @@
+/* 
+  Assignment 1 & 2
+  Author: Michelle Fajardo
+  SN: 301097601
+  SEC: 05
+  DATE: OCT. 26, 2020
+*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -79,7 +87,7 @@ module.exports.processEditList = (req, res, next) => {
     });
 }
 
-module.exports.displayDeleteList = (req, res, next) => {
+module.exports.performDeletion = (req, res, next) => {
     let id = req.params.id;
 
     Contact.remove({_id:id}, (err) => {
