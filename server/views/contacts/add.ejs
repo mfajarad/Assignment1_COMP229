@@ -1,0 +1,44 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+<!--CONTENT-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title  %> </h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameField"> Name </label>
+                    <input type="text" class="form-control" id="nameField" placeholder="Input contact" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="numberField"> Number </label>
+                    <input type="text" class="form-control" id="numberField" placeholder="Input number" name="number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="locationField"> Location </label>
+                    <input type="text" class="form-control" id="locationField" placeholder="Input location" name="location" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="genderField"> Gender </label>
+                    <input type="text" class="form-control" id="genderField" placeholder="Input gender" name="gender" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit" style="background-color: brown;">
+                    <i class="fas fa-folder-plus"></i> Add </button>
+                    <a href="/contact-list" class="btn btn-warning" style="background-color: chocolate;">
+                        <i class="fas fa-undo"></i> Undo </a>
+
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<% include ../partials/bottom_nav.ejs %>
+
+<% include ../partials/footer.ejs %>

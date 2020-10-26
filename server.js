@@ -4,12 +4,13 @@
  * Module dependencies.
  */
 
-var app = require('./config/app');
-var debug = require('debug')('week-4:server');
+var app = require('./server/config/app');
+var debug = require('debug');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
+ * 
  */
 
 var port = normalizePort(process.env.PORT || '3000');

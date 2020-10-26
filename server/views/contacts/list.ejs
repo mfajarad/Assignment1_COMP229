@@ -1,0 +1,48 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+  
+
+  <!--MAIN-->
+  <main class="container">
+      <div class="col-md-offset-3 col-md-10">
+          <h1><%= title %></h1>
+          <a href="/contact-list/add" class="btn btn-primary btn-sm" role="button" style="background-color: brown;">
+          <i class="fas fa-plus-circle"></i> Add contact</a>
+          <br>
+          <table class="table table-bordered table-striped table-hover">
+              <!-- List -->
+              <tr>
+                  <th class="text-center col-2">Name </th>
+                  <th class="text-center col-2">Number </th>
+                  <th class="text-center col-1">Location </th>
+                  <th class="text-center col-1">Gender </th>
+                  <th class="text-center col-1"></th>
+                  <th class="text-center col-1"></th>
+              </tr>
+
+              <!--Looping-->
+              <% for(let i = 0; i < ContactList.length; i++) { %>
+                <tr class="a-flex">
+                    <td class="text-center col-2"><%= ContactList[i].name %></td>
+                    <td class="text-center col-2"><%= ContactList[i].number %></td>
+                    <td class="text-center col-1"><%= ContactList[i].location %></td>
+                    <td class="text-center col-1"><%= ContactList[i].gender %></td>
+                    <td class="text-center col-1">
+                      <a href="/contact-list/edit/<%= ContactList[i]._id %>" class="btn btn-primary btn-sm" style="background-color: brown;">
+                        <i class="fas fa-edit"></i></a>
+                    </td>
+                    <td class="text-center col-1">
+                      <a href="/contact-list/delete/<%= ContactList[i]._id %>" class="btn btn-danger btn-sm" style="background-color: chocolate;">
+                        <i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+              <% } %>
+          </table>
+      </div>
+    <div></div>
+  </main>
+
+<% include ../partials/bottom_nav.ejs %>
+
+<% include ../partials/footer.ejs %>
